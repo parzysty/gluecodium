@@ -1,5 +1,11 @@
 # Gluecodium project Release Notes
 
+## Unreleased
+### Features:
+  * Added support for type aliases (typedefs) in Dart
+### Breaking changes:
+  * Generated Dart code now requires minimum Dart version 2.13.0.
+
 ## 10.7.1
 Release date: 2022-02-08
 ### Bug fixes:
