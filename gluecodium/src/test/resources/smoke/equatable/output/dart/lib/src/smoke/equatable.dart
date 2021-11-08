@@ -3,6 +3,7 @@ import 'package:collection/collection.dart';
 import 'package:library/src/_library_context.dart' as __lib;
 import 'package:library/src/builtin_types__conversion.dart';
 import 'package:library/src/generic_types__conversion.dart';
+typedef ErrorCodeToMessageMap = Map<int, String>;
 enum SomeEnum {
     foo,
     bar
@@ -68,7 +69,7 @@ class EquatableStruct {
   NestedEquatableStruct structField;
   SomeEnum enumField;
   List<String> arrayField;
-  Map<int, String> mapField;
+  ErrorCodeToMessageMap mapField;
   EquatableStruct(this.boolField, this.intField, this.longField, this.floatField, this.doubleField, this.stringField, this.structField, this.enumField, this.arrayField, this.mapField);
   @override
   bool operator ==(Object other) {
@@ -244,7 +245,7 @@ class EquatableNullableStruct {
   NestedEquatableStruct? structField;
   SomeEnum? enumField;
   List<String>? arrayField;
-  Map<int, String>? mapField;
+  ErrorCodeToMessageMap? mapField;
   EquatableNullableStruct(this.boolField, this.intField, this.uintField, this.floatField, this.stringField, this.structField, this.enumField, this.arrayField, this.mapField);
   @override
   bool operator ==(Object other) {

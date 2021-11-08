@@ -1,5 +1,7 @@
 import 'dart:ffi';
 import 'package:library/src/_library_context.dart' as __lib;
+import 'package:library/src/generic_types__conversion.dart';
+typedef ULong = List<Struct>;
 enum Enum {
     naN
 }

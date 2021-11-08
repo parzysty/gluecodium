@@ -12,6 +12,13 @@ abstract class DefaultValues {
   @visibleForTesting
   static dynamic $prototype = DefaultValues$Impl(Pointer<Void>.fromAddress(0));
 }
+typedef DefaultValues_LongTypedef = int;
+typedef DefaultValues_BooleanTypedef = bool;
+typedef DefaultValues_StringTypedef = String;
+typedef DefaultValues_EnumTypedef = DefaultValues_SomeEnum;
+typedef DefaultValues_FloatArray = List<double>;
+typedef DefaultValues_IdToStringMap = Map<int, String>;
+typedef DefaultValues_StringSet = Set<String>;
 enum DefaultValues_SomeEnum {
     fooValue,
     barValue
@@ -472,10 +479,10 @@ void smokeDefaultvaluesStructwithspecialdefaultsReleaseFfiHandleNullable(Pointer
 // End of DefaultValues_StructWithSpecialDefaults "private" section.
 class DefaultValues_StructWithEmptyDefaults {
   List<int> intsField;
-  List<double> floatsField;
-  Map<int, String> mapField;
+  DefaultValues_FloatArray floatsField;
+  DefaultValues_IdToStringMap mapField;
   DefaultValues_StructWithDefaults structField;
-  Set<String> setTypeField;
+  DefaultValues_StringSet setTypeField;
   DefaultValues_StructWithEmptyDefaults(this.intsField, this.floatsField, this.mapField, this.structField, this.setTypeField);
   DefaultValues_StructWithEmptyDefaults.withDefaults()
     : intsField = [], floatsField = [], mapField = {}, structField = DefaultValues_StructWithDefaults.withDefaults(), setTypeField = {};
@@ -577,13 +584,13 @@ void smokeDefaultvaluesStructwithemptydefaultsReleaseFfiHandleNullable(Pointer<V
   _smokeDefaultvaluesStructwithemptydefaultsReleaseHandleNullable(handle);
 // End of DefaultValues_StructWithEmptyDefaults "private" section.
 class DefaultValues_StructWithTypedefDefaults {
-  int longField;
-  bool boolField;
-  String stringField;
-  DefaultValues_SomeEnum enumField;
+  DefaultValues_LongTypedef longField;
+  DefaultValues_BooleanTypedef boolField;
+  DefaultValues_StringTypedef stringField;
+  DefaultValues_EnumTypedef enumField;
   DefaultValues_StructWithTypedefDefaults(this.longField, this.boolField, this.stringField, this.enumField);
   DefaultValues_StructWithTypedefDefaults.withDefaults()
-    : longField = 42, boolField = true, stringField = "\\Jonny \"Magic\" Smith\n", enumField = DefaultValues_SomeEnum.barValue;
+    : longField = 42, boolField = true, stringField = "\\Jonny \"Magic\" Smith\n", enumField = DefaultValues_EnumTypedef.barValue;
 }
 // DefaultValues_StructWithTypedefDefaults "private" section, not exported.
 final _smokeDefaultvaluesStructwithtypedefdefaultsCreateHandle = __lib.catchArgumentError(() => __lib.nativeLibrary.lookupFunction<

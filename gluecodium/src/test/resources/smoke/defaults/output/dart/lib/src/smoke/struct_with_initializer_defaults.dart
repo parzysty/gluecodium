@@ -1,13 +1,14 @@
 import 'dart:ffi';
 import 'package:library/src/_library_context.dart' as __lib;
 import 'package:library/src/generic_types__conversion.dart';
+import 'package:library/src/smoke/default_values.dart';
 import 'package:library/src/smoke/types_with_defaults.dart';
 class StructWithInitializerDefaults {
   List<int> intsField;
-  List<double> floatsField;
+  DefaultValues_FloatArray floatsField;
   StructWithAnEnum structField;
-  Set<String> setTypeField;
-  Map<int, String> mapField;
+  DefaultValues_StringSet setTypeField;
+  DefaultValues_IdToStringMap mapField;
   StructWithInitializerDefaults(this.intsField, this.floatsField, this.structField, this.setTypeField, this.mapField);
   StructWithInitializerDefaults.withDefaults()
     : intsField = [4, -2, 42], floatsField = [3.14, double.negativeInfinity], structField = StructWithAnEnum(AnEnum.disabled), setTypeField = {"foo", "bar"}, mapField = {1: "foo", 42: "bar"};

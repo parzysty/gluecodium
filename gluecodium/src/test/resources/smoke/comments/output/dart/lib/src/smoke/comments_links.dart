@@ -39,8 +39,8 @@ abstract class CommentsLinks {
   ///   * nested lists
   ///
   /// Not working for Java:
-  /// * typedef: [bool]
-  /// * top level typedef: [bool]
+  /// * typedef: [Comments_Usefulness]
+  /// * top level typedef: [TypeCollectionTypedef]
   ///
   /// Not working for Swift:
   /// * named comment: [][Comments.veryUseful]
